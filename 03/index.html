@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        CSS.registerProperty({
+            name: '--tooth-width',
+            syntax: '<number>',
+            initialValue: 0,
+            inherits: false
+        });
+        
+        CSS.paintWorklet.addModule('animated.js');
+    </script>
+    <style>
+        .wtf {
+            height: 100vh;
+            background-image: paint(animated);
+            --tooth-width: 1;
+            animation:3s infinite alternate thething;
+        }
+
+        @keyframes thething {
+            from {
+                --tooth-width: 0;
+            }
+            to {
+                --tooth-width: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wtf"></div>
+</body>
+</html>
