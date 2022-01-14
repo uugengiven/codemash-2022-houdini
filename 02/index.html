@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Houdini 2</title>
     <script>
         CSS.paintWorklet.addModule('dots.js');
     </script>
     <style>
         body {
             height: 100vh;
+        }
+
+        .dots {
             background-image: paint(dots);
+        }
+
+        .large-box {
+            width: 50%;
+            height: 50%;
+            filter: blur(0px);
+            transition-duration: 4s;
+        }
+
+        .large-box:hover {
+            filter: blur(8px); 
         }
     </style>
 </head>
 <body>
-    
+    <div class="dots large-box"></div>
+    <h1 class="dots">General Kenobi</h1>
 </body>
 </html>

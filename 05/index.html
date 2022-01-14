@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houdini 5</title>
+    <script>
+        CSS.paintWorklet.addModule('overlay.js');
+
+        CSS.registerProperty({
+            name: '--color',
+            syntax: '<color>',
+            initialValue: 'red',
+            inherits: false
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <style>
+        .names {
+            display: flex;
+            justify-content: space-between;
+            padding: 3em;
+            height: 90vh;
+            align-items: flex-end;
+        }
+        .tag {
+            min-width: 100px;
+            max-width: 50%;
+            min-height: 2em;
+            padding-left: 1em;
+            padding-right: 1em;
+            font-size: 2em;
+            font-family: 'Roboto', sans-serif;
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+        }
+
+        .tag.left {
+            background: paint(tarpazoid);
+            --side:left;
+        }
+        .tag.right {
+            background: paint(tarpazoid);
+            --side:right;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="names">
+        <div class="tag left">John Lange</div>
+        <div class="tag right">Maybe a longer name? How will this work?</div>
+    </div>
+</body>
+</html>

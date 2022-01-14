@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Houdini 3</title>
     <script>
         CSS.registerProperty({
-            name: '--tooth-width',
+            name: '--animation-amount',
             syntax: '<number>',
             initialValue: 0,
             inherits: false
@@ -19,16 +19,16 @@
         .wtf {
             height: 100vh;
             background-image: paint(animated);
-            --tooth-width: 1;
-            animation:3s infinite alternate thething;
+            --animation-amount: 1;
+            animation:2s infinite linear thething;
         }
 
         @keyframes thething {
             from {
-                --tooth-width: 0;
+                --animation-amount: 0;
             }
             to {
-                --tooth-width: 1;
+                --animation-amount: 1;
             }
         }
     </style>

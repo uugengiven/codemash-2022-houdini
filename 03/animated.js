@@ -1,5 +1,5 @@
 class AnimatedPainter {
-    static get inputProperties() { return ['--tooth-width'] }
+    static get inputProperties() { return ['--animation-amount'] }
     // would it be javascript if it didn't require some kind of binding?
 
     paint(ctx, geometry, props)
@@ -10,11 +10,9 @@ class AnimatedPainter {
         // your animation should always give the same result
         // for any given number
 
-        const animation_amount = props.get('--tooth-width').value;
-        console.log(props.get('--tooth-width').value);
-        //const animation_amount = 0.5;
-        const x = geometry.width * animation_amount;
-        const y = geometry.height * animation_amount;
+        const animation_amount = props.get('--animation-amount').value;
+        const x = geometry.width / 2 + Math.sin(animation_amount * Math.PI * 2) * 150;
+        const y = geometry.height / 2 + Math.cos(animation_amount * Math.PI * 2) * 150;
 
         ctx.beginPath();
         ctx.arc(x, y, 50, 0, 2 * Math.PI);
